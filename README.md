@@ -1,1 +1,1 @@
-# Python-Tkinter-Application-Installer
+# Python Tkinter Application Installer
