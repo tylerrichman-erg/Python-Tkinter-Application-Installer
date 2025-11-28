@@ -2,7 +2,7 @@ import os
 #import shutil
 import subprocess
 
-app_path = "C:\Program Files (Python)"
+app_path = "C:/Program Files (Python)"
 app_name = "Basic Python Tkinter Application"
 repo_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer.git"
 
