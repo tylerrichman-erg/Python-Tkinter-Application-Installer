@@ -8,7 +8,7 @@ repo_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-Insta
 
 workspace_path = os.path.join(app_path, app_name)
 
-os.makedirs(gdb_folder_location, exist_ok=True)
+os.makedirs(workspace_path, exist_ok=True)
 
 subprocess.run(
         ["git", "clone", repo_url, workspace_path],
