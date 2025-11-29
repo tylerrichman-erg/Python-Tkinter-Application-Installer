@@ -4,7 +4,7 @@
 import io
 import os
 import requests
-#import shutil
+import shutil
 import subprocess
 import zipfile
 
@@ -16,7 +16,13 @@ code_zip_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-I
 
 workspace_path = os.path.join(app_path, app_name)
 
-requirements_txt_path = os.path.join(workspace_path, "requirements.txt")
+repository_name = "{0}-{1}".format(
+    code_zip_url.split("/")[4],
+    code_zip_url.split("/")[-1].replace(".zip", "")
+)
+repository_path = os.path.join(workspace_path, repository_name)
+
+requirements_txt_path = os.path.join(repository_path, "requirements.txt")
 activate_venv_command = os.path.join(workspace_path, "python-env/Scripts/activate.bat")
 python_exe_location = os.path.join(workspace_path, "python-env/Scripts/python.exe")
 pip_exe_location = os.path.join(workspace_path, "python-env/Scripts/pip.exe")
@@ -29,11 +35,6 @@ response.raise_for_status()
 with zipfile.ZipFile(io.BytesIO(response.content)) as z:
     os.makedirs(workspace_path, exist_ok=True)
     z.extractall(workspace_path)
-
-repository_name = "{0}-{1}".format(
-    code_zip_url.split("/")[4],
-    code_zip_url.split("/")[-1].replace(".zip", "")
-)
 
 ## 4) Create Python Virtual Environment
 
