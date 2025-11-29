@@ -17,6 +17,9 @@ code_zip_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-I
 workspace_path = os.path.join(app_path, app_name)
 
 requirements_txt_path = os.path.join(workspace_path, "requirements.txt")
+activate_venv_command = os.path.join(workspace_path, "python-env/Scripts/activate.bat")
+python_exe_location = os.path.join(workspace_path, "python-env/Scripts/python.exe")
+pip_exe_location = os.path.join(workspace_path, "python-env/Scripts/pip.exe")
 
 ## 3) Download Repository to Workspace
 
