@@ -32,7 +32,7 @@ pyinstaller_exe_location = os.path.join(workspace_path, "python-env/Scripts/pyin
 icon_location = os.path.join(workspace_path, "img/icon/main.png")
 
 output_exe_location = os.path.join(workspace_path, "exe/dist/main.exe")
-final_exe_location = os.path.join(workspace_path, "Tkinter-Application-Template_0_1_0.exe")
+final_exe_location = os.path.join(workspace_path, "Basic-Tkinter-Application_0_1_0.exe")
 
 ## 3) Download Repository to Workspace
 
