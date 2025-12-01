@@ -48,7 +48,7 @@ with zipfile.ZipFile(io.BytesIO(response.content)) as z:
 if os.path.exists(os.path.join(workspace_path, "python-env")):
     shutil.rmtree(os.path.join(workspace_path, "python-env"))
 
-subprocess.run(['python', '-m', 'venv', os.path.join(repository_path, "python-env")], check=True)
+subprocess.run(['python', '-m', 'venv', os.path.join(workspace_path, "python-env")], check=True)
 
 with open(requirements_txt_path, "r") as f:
     for line in f:
