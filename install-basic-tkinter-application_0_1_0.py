@@ -69,6 +69,7 @@ items = os.listdir(repository_path)
 filtered_items = [x for x in items if x not in [".git", ".gitattributes", "README.md"]]
 
 for filtered_item in filtered_items:
+    print(filtered_items)
     if os.path.isdir(filtered_item):
         shutil.copytree(
             os.path.join(repository_path, filtered_item),
@@ -80,7 +81,7 @@ for filtered_item in filtered_items:
             os.path.join(repository_path, "exe", filtered_item)
         )
 
-## 6) Install Application
+## 7) Install Application
 
 try:
     command = (
