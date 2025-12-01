@@ -73,12 +73,12 @@ for filtered_item in filtered_items:
     if os.path.isdir(filtered_item):
         shutil.copytree(
             os.path.join(repository_path, filtered_item),
-            os.path.join(repository_path, "exe", filtered_item)
+            os.path.join(workspace_path, "exe", filtered_item)
         )
     else:
         shutil.copy(
             os.path.join(repository_path, filtered_item),
-            os.path.join(repository_path, "exe", filtered_item)
+            os.path.join(workspace_path, "exe", filtered_item)
         )
 
 ## 7) Install Application
