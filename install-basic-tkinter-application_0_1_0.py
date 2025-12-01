@@ -27,12 +27,12 @@ python_exe_location = os.path.join(repository_path, "python-env/Scripts/python.e
 pip_exe_location = os.path.join(repository_path, "python-env/Scripts/pip.exe")
 
 main_py_location = os.path.join(repository_path, "dev/main.py")
-main_exe_folder_location = os.path.join(repository_path, "exe")
+main_exe_folder_location = os.path.join(workspace_path, "exe")
 pyinstaller_exe_location = os.path.join(repository_path, "python-env/Scripts/pyinstaller.exe")
 icon_location = os.path.join(repository_path, "img/icon/main.png")
 
-output_exe_location = os.path.join(repository_path, "exe/dist/main.exe")
-final_exe_location = os.path.join(repository_path, "Basic-Tkinter-Application_0_1_0.exe")
+output_exe_location = os.path.join(workspace_path, "exe/dist/main.exe")
+final_exe_location = os.path.join(workspace_path, "Basic-Tkinter-Application_0_1_0.exe")
 
 ## 3) Download Repository to Workspace
 
