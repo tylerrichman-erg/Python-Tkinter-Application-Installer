@@ -63,6 +63,23 @@ if os.path.exists(main_exe_folder_location):
 if not os.path.exists(main_exe_folder_location):
     os.makedirs(main_exe_folder_location)
 
+## 6) Copy Files to Exe Folder
+
+items = os.listdir(repository_path)
+filtered_items = [x for x in items if x not in [".git", ".gitattributes", "README.md"]]
+
+for filtered_item in filtered_items:
+    if os.path.isdir(filtered_item):
+        shutil.copytree(
+            os.path.join(repository_path, filtered_item),
+            os.path.join(repository_path, "exe", filtered_item)
+        )
+    else:
+        shutil.copy(
+            os.path.join(repository_path, filtered_item),
+            os.path.join(repository_path, "exe", filtered_item)
+        )
+
 ## 6) Install Application
 
 try:
