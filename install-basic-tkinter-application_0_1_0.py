@@ -22,13 +22,13 @@ repository_name = "{0}-{1}".format(
 repository_path = os.path.join(workspace_path, repository_name)
 
 requirements_txt_path = os.path.join(repository_path, "requirements.txt")
-activate_venv_command = os.path.join(repository_path, "python-env/Scripts/activate.bat")
-python_exe_location = os.path.join(repository_path, "python-env/Scripts/python.exe")
-pip_exe_location = os.path.join(repository_path, "python-env/Scripts/pip.exe")
+activate_venv_command = os.path.join(workspace_path, "python-env/Scripts/activate.bat")
+python_exe_location = os.path.join(workspace_path, "python-env/Scripts/python.exe")
+pip_exe_location = os.path.join(workspace_path, "python-env/Scripts/pip.exe")
 
 main_py_location = os.path.join(repository_path, "dev/main.py")
 main_exe_folder_location = os.path.join(workspace_path, "exe")
-pyinstaller_exe_location = os.path.join(repository_path, "python-env/Scripts/pyinstaller.exe")
+pyinstaller_exe_location = os.path.join(workspace_path, "python-env/Scripts/pyinstaller.exe")
 icon_location = os.path.join(repository_path, "img/icon/main.png")
 
 output_exe_location = os.path.join(workspace_path, "exe/dist/main.exe")
@@ -45,8 +45,8 @@ with zipfile.ZipFile(io.BytesIO(response.content)) as z:
 
 ## 4) Create Python Virtual Environment
 
-if os.path.exists(os.path.join(repository_path, "python-env")):
-    shutil.rmtree(os.path.join(repository_path, "python-env"))
+if os.path.exists(os.path.join(workspace_path, "python-env")):
+    shutil.rmtree(os.path.join(workspace_path, "python-env"))
 
 subprocess.run(['python', '-m', 'venv', os.path.join(repository_path, "python-env")], check=True)
 
