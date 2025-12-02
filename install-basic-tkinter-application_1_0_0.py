@@ -35,7 +35,7 @@ pyinstaller_exe_location = os.path.join(python_env_path, "Scripts/pyinstaller.ex
 
 requirements_txt_path = os.path.join(repository_path, "requirements.txt")
 main_py_location = os.path.join(repository_path, "dev/main.py")
-icon_location = os.path.join(repository_path, "img/icon/main.png")
+icon_location = os.path.join(repository_path, "img/icon.png")
 
 output_exe_location = os.path.join(workspace_path, "exe/dist/main.exe")
 final_exe_location = os.path.join(workspace_path, f"{app_name}.exe")
