@@ -13,10 +13,10 @@ import zipfile
 config = configparser.ConfigParser()
 config.read("config.ini")
 
-app_path = config["Installation"]["AppPath"]
-app_name = config["Installation"]["AppName"]
-source_code_url = config["Installation"]["SourceCodeURL"]
-app_version = config["Installation"]["AppVersion"]
+app_path = "C:/Program Files (Python)"
+app_name = "Basic Python Tkinter Application"
+source_code_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer/archive/refs/heads/main.zip"
+app_version = "1.0.0"
 
 repository_name = "{0}-{1}".format(
     source_code_url.split("/")[4],
