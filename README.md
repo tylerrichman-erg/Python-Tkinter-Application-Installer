@@ -1,7 +1,7 @@
 # Python Tkinter Application Installer
 
 ## Overview
-This repository provides a method to automatically install Python Tkinter applications through an installation file and can be used as a template to build larger applications.
+This repository provides a method to automatically install Python <a href="https://docs.python.org/3/library/tkinter.html">Tkinter</a> applications through an installation file. This repository can be used as a template to build larger applications.
 
 ## Instructions
 
