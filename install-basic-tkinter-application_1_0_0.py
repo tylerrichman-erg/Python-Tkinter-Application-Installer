@@ -79,6 +79,7 @@ items = os.listdir(repository_path)
 filtered_items = [x for x in items if x not in [".git", ".gitattributes", "README.md"]]
 
 for filtered_item in filtered_items:
+    print(filtered_item
     if os.path.isdir(filtered_item):
         shutil.copytree(
             os.path.join(repository_path, filtered_item),
