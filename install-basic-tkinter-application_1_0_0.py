@@ -81,11 +81,13 @@ filtered_items = [x for x in items if x not in [".git", ".gitattributes", "READM
 for filtered_item in filtered_items:
     print(filtered_item)
     if os.path.isdir(filtered_item):
+        print("Folder")
         shutil.copytree(
             os.path.join(repository_path, filtered_item),
             os.path.join(main_exe_folder_location, filtered_item)
         )
     else:
+        print("File")
         shutil.copy(
             os.path.join(repository_path, filtered_item),
             os.path.join(main_exe_folder_location, filtered_item)
