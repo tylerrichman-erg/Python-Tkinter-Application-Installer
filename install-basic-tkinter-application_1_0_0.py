@@ -103,13 +103,14 @@ try:
         f'--add-data=dev;dev '
         f'--add-data=img;img '
         #f'--add-data=txt;txt '
-        f'--add-data=install-basic-tkinter-application_0_1_0.py;. '
+        f'--add-data=install-basic-tkinter-application_1_0_0.py;. '
         f'--add-data=config.ini;. '
         f'"{main_py_location}"'
     )
     subprocess.run(command, shell=True, check=True)
 
 except:
+    print("INSTALLATION FILE MESSAGE: ERROR - Application build failed.")
     proc = subprocess.run(command, shell=True, capture_output=True, text=True)
     print(proc.stdout)
     print(proc.stderr)
