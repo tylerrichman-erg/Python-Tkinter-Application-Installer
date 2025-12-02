@@ -76,7 +76,7 @@ if not os.path.exists(main_exe_folder_location):
     os.makedirs(main_exe_folder_location)
 
 items = os.listdir(repository_path)
-filtered_items = [x for x in items if x not in [".git", ".gitattributes", "README.md"]]
+filtered_items = [x for x in items if x not in [".git", ".gitattributes", "README.md", "requirements.txt"]]
 
 for filtered_item in filtered_items:
     if filtered_item in ["dev", "img"]: #os.path.isdir(filtered_item):
@@ -103,7 +103,7 @@ try:
         f'--add-data=dev;dev '
         f'--add-data=img;img '
         #f'--add-data=txt;txt '
-        f'--add-data=install-basic-tkinter-application_1_0_0.py;. '
+        #f'--add-data=install-basic-tkinter-application_1_0_0.py;. '
         f'--add-data=config.ini;. '
         f'"{main_py_location}"'
     )
