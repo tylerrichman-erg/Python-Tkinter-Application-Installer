@@ -8,10 +8,10 @@ def on_button_click():
     label.config(text="Button clicked!")
 
 root = tk.Tk()
-root.title(config["App Info"]["AppName"])
-root.geometry(config["App Info"]["WindowSize"])
+root.title(config["Info"]["Name"])
+root.geometry(config["Window"]["Size"])
 
-label = tk.Label(root, text="Hello, Tkinter!", font=(config["Label Font"]["Family"], config["Label Font"]["Size"]))
+label = tk.Label(root, text="Hello, Tkinter!", font=("Arial", 14))
 label.pack(pady=20)
 
 button = tk.Button(root, text="Click Me", command=on_button_click)

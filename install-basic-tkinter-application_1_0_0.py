@@ -9,11 +9,12 @@ import zipfile
 
 ## 2) Initialize Variables
 
+config = configparser.ConfigParser()
+config.read("./config.ini")
 
-
-app_path = "C:/Program Files (Python)"
-app_name = "Basic Python Tkinter Application"
-source_code_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer/archive/refs/heads/main.zip"
+app_path = config["Installation"]["Path"]
+app_name = config["Info"]["Name"]
+source_code_url = config["Installation"]["SourceURL"]
 
 repository_name = "{0}-{1}".format(
     source_code_url.split("/")[4],
@@ -21,6 +22,7 @@ repository_name = "{0}-{1}".format(
 )
 
 workspace_path = os.path.join(app_path, app_name)
+
 python_env_path = os.path.join(workspace_path, "python-env")
 repository_path = os.path.join(workspace_path, repository_name)
 main_exe_folder_location = os.path.join(workspace_path, "exe")
