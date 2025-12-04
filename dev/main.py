@@ -1,20 +1,20 @@
+import configparser
 import tkinter as tk
+
+config = configparser.ConfigParser()
+config.read("../config.ini")
 
 def on_button_click():
     label.config(text="Button clicked!")
 
-# Create main window
 root = tk.Tk()
-root.title("Basic Tkinter App")
-root.geometry("300x200")  # width x height
+root.title(config["App Info"]["AppName"])
+root.geometry(config["App Info"]["WindowSize"])
 
-# Create a label
-label = tk.Label(root, text="Hello, Tkinter!", font=("Arial", 14))
+label = tk.Label(root, text="Hello, Tkinter!", font=(config["Label Font"]["Family"], config["Label Font"]["Size"]))
 label.pack(pady=20)
 
-# Create a button
 button = tk.Button(root, text="Click Me", command=on_button_click)
 button.pack()
 
-# Run the application
 root.mainloop()

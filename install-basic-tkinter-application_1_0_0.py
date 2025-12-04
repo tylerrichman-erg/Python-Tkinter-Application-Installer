@@ -1,6 +1,5 @@
 ## 1) Import Libraries
 
-import configparser
 import io
 import os
 import requests
@@ -10,13 +9,11 @@ import zipfile
 
 ## 2) Initialize Variables
 
-config = configparser.ConfigParser()
-config.read("config.ini")
+
 
 app_path = "C:/Program Files (Python)"
 app_name = "Basic Python Tkinter Application"
 source_code_url = "https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer/archive/refs/heads/main.zip"
-app_version = "1.0.0"
 
 repository_name = "{0}-{1}".format(
     source_code_url.split("/")[4],
@@ -42,7 +39,7 @@ final_exe_location = os.path.join(workspace_path, f"{app_name}.exe")
 
 ## 3) Download Repository to Workspace
 
-print(f"INSTALLATION FILE MESSAGE: Downloading application code from {source_code_url}.")
+print(f"INSTALLATION MESSAGE: Downloading application code from {source_code_url}.")
 
 response = requests.get(source_code_url)
 response.raise_for_status()
@@ -53,7 +50,7 @@ with zipfile.ZipFile(io.BytesIO(response.content)) as z:
 
 ## 4) Create Python Virtual Environment
 
-print(f"INSTALLATION FILE MESSAGE: Creating Python Virtual Environment.")
+print(f"INSTALLATION MESSAGE: Creating Python Virtual Environment.")
 
 if os.path.exists(python_env_path):
     shutil.rmtree(python_env_path)
@@ -67,7 +64,7 @@ with open(requirements_txt_path, "r") as f:
 
 ## 5) Create Enviroment for Application
 
-print(f"INSTALLATION FILE MESSAGE: Creating Application Environment.")
+print(f"INSTALLATION MESSAGE: Creating Application Environment.")
 
 if os.path.exists(main_exe_folder_location):
     shutil.rmtree(main_exe_folder_location)
@@ -92,7 +89,7 @@ for filtered_item in filtered_items:
 
 ## 6) Create Executable of Application
 
-print(f"INSTALLATION FILE MESSAGE: Creating Application File.")
+print(f"INSTALLATION MESSAGE: Creating Application File.")
 
 try:
     command = (
@@ -102,15 +99,13 @@ try:
         f'--icon="{icon_location}" '
         f'--add-data=dev;dev '
         f'--add-data=img;img '
-        #f'--add-data=txt;txt '
-        #f'--add-data=install-basic-tkinter-application_1_0_0.py;. '
         f'--add-data=config.ini;. '
         f'"{main_py_location}"'
     )
     subprocess.run(command, shell=True, check=True)
 
 except:
-    print("INSTALLATION FILE MESSAGE: ERROR - Application build failed.")
+    print("INSTALLATION MESSAGE: ERROR - Application build failed.")
     proc = subprocess.run(command, shell=True, capture_output=True, text=True)
     print(proc.stdout)
     print(proc.stderr)
@@ -120,7 +115,7 @@ shutil.copy(
     final_exe_location
     )
 
-print(f"INSTALLATION FILE MESSAGE: Installation Complete! Application located at: {final_exe_location}.")
+print(f"INSTALLATION MESSAGE: Installation Complete! Application located at: {final_exe_location}.")
 
 #NOTES
 #1) Repository needs to be public for this to work.
