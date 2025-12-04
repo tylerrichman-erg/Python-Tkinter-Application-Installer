@@ -35,7 +35,7 @@ The <a href="https://github.com/tylerrichman-erg/Python-Tkinter-Application-Inst
 The source code url parameter must be changed once you create a repository for your own application, otherwise you will install this application. The installation path will be created if it does not exist, it's not required to create it beforehand.
 
 #### Libraries
-All external Python libraries required for the application (those listed earlier without the *) need to be included within the <a href="https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer/blob/main/requirements.txt">requirements.txt</a> file. Follow the format of the existing libraries where the library name is listed along with the version that is seperated by the "equal to" opperator (e.g. pillow==11.3.0).
+All external Python libraries required for the application need to be included within the <a href="https://github.com/tylerrichman-erg/Python-Tkinter-Application-Installer/blob/main/requirements.txt">requirements.txt</a> file. Follow the format of the existing libraries where the library name is listed along with the version that is seperated by the "equal to" opperator (e.g. pillow==11.3.0).
 
 #### Installation File Name
 It's recomended to update the installation python script file name from install-basic-tkinter-application_1_0_0.py to a name that fits your application.
